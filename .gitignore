@@ -4,3 +4,5 @@
 node_module
 
 .DS_Stores
+
+.env
