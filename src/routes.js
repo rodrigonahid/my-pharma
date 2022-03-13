@@ -3,6 +3,7 @@ const router = require("express").Router();
 const AuthController = require("./controller/AuthController.js");
 const ProductCategoryController = require("./controller/ProductCategoryController");
 const BrandController = require("./controller/BrandController");
+const ProductController = require("./controller/ProductController");
 
 // Authentication
 router.post("/register", AuthController.register);
@@ -21,5 +22,8 @@ router.get("/brand", BrandController.read);
 router.get("/brand/:id", BrandController.readOne);
 router.patch("/brand", BrandController.update);
 router.delete("/brand", BrandController.delete);
+
+// Product
+router.post("/product", ProductController.create);
 
 module.exports = router;
