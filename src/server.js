@@ -2,8 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const cors = require("cors");
+
 const app = express();
 require("dotenv").config();
+
 // Port ready for heroku
 const port = process.env.PORT || 4000;
 
@@ -12,6 +15,8 @@ mongoose.connect(process.env.MONGODB_ATLAS_KEY);
 // BodyParser Defaults
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+// Enable CORS
+app.use(cors());
 // Using routes.js
 app.use(routes);
 
