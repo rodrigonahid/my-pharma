@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGODB_ATLAS_KEY);
 // BodyParser Defaults
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 // Enable CORS
 app.use(cors());
 // Using routes.js
