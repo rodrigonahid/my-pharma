@@ -48,6 +48,9 @@ const AuthController = {
     const { email, password } = req.body;
 
     const user = await UserSchema.findOne({ email: email });
+    if (!email || !password) {
+      return res.status(400).json({ err: "Fill the fields" });
+    }
 
     if (!user) {
       return res.status(400).json({ err: "Email not registered" });
