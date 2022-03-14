@@ -34,7 +34,7 @@ const ProductCategoryController = {
 
     const productCategories = await ProductCategorySchema.find({});
 
-    return res.json({ err: null, productCategories });
+    return res.json({ err: null, data: productCategories });
   },
   readOne: async (req, res) => {
     const { id } = req.params;
